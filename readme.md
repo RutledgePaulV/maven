@@ -1,7 +1,10 @@
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.rutledgepaulv/maven/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.rutledgepaulv/maven)
+
 ### Maven
 Parent poms for com.github.rutledgepaulv projects. Includes basic configuration
 for gitflow, tests, code coverage, and releasing.
 
+You can find all of my maven projects at [central](http://mvnrepository.com/artifact/com.github.rutledgepaulv)
 
 ### Usage
 ```xml
