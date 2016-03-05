@@ -220,7 +220,7 @@
                 </dependencies>
                 <configuration>
                     <excludes>
-                        <exclude>**/*IT.java</exclude>
+                        <exclude>**/*IT.*</exclude>
                     </excludes>
                 </configuration>
                 <executions>

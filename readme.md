@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/RutledgePaulV/maven.svg?branch=master)](https://travis-ci.org/RutledgePaulV/maven)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.rutledgepaulv/maven/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.rutledgepaulv/maven)
 
 ### Maven
