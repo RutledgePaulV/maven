@@ -57,9 +57,14 @@
         <java.version>1.8</java.version>
         <junit.version>4.12</junit.version>
         <nexus.version>1.6.3</nexus.version>
+        <sources.version>3.0.0</sources.version>
+        <javadoc.version>2.10.3</javadoc.version>
+        <compiler.version>3.5.1</compiler.version>
+        <failsafe.version>2.19.1</failsafe.version>
+        <surefire.version>2.19.1</surefire.version>
         <gitflow.version>1.0-m5.1</gitflow.version>
-        <coveralls.version>4.0.0</coveralls.version>
-        <jacoco.version>0.7.5.201505241946</jacoco.version>
+        <coveralls.version>4.1.0</coveralls.version>
+        <jacoco.version>0.7.6.201602180812</jacoco.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -74,6 +79,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
+                        <version>${sources.version}</version>
                         <executions>
                             <execution>
                                 <id>attach-sources</id>
@@ -88,6 +94,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>${javadoc.version}</version>
                         <executions>
                             <execution>
                                 <id>attach-javadocs</id>
@@ -136,55 +143,6 @@
     <build>
 
 
-        <pluginManagement>
-            <plugins>
-
-                <!-- integration tests -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-failsafe-plugin</artifactId>
-                    <configuration>
-                        <includes>
-                            <include>**/*IT.*</include>
-                        </includes>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>integration-test</goal>
-                                <goal>verify</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-
-                <!-- unit tests -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-surefire-plugin</artifactId>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.apache.maven.surefire</groupId>
-                            <artifactId>surefire-junit47</artifactId>
-                        </dependency>
-                    </dependencies>
-                    <configuration>
-                        <excludes>
-                            <exclude>**/*IT.java</exclude>
-                        </excludes>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>test</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-
-            </plugins>
-        </pluginManagement>
-
 
         <plugins>
 
@@ -192,6 +150,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>${compiler.version}</version>
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
@@ -222,6 +181,52 @@
                         <id>prepare-agent</id>
                         <goals>
                             <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- integration tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>${failsafe.version}</version>
+                <configuration>
+                    <includes>
+                        <include>**/*IT.*</include>
+                    </includes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- unit tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-junit47</artifactId>
+                        <version>${surefire.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <excludes>
+                        <exclude>**/*IT.java</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test</goal>
                         </goals>
                     </execution>
                 </executions>
