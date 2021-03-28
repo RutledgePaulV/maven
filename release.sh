@@ -9,10 +9,10 @@ then
     git reset --hard origin/develop
 
     echo "Creating the release branch"
-    mvn jgitflow:release-start -DpushReleases=true -DautoVersionSubmodules=true
+    mvn gitflow:release-start -DpushRemote=true
 
     echo "Merging the release branch into develop & master, pushing changes, and tagging new version off of master"
-    mvn jgitflow:release-finish -DnoReleaseBuild=true -DpushReleases=true -DnoDeploy=true
+    mvn gitflow:release-finish -DpushRemote=true
 
     echo "Checking out latest version of master."
     git fetch

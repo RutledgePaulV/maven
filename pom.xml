@@ -62,11 +62,9 @@
         <compiler.version>3.8.1</compiler.version>
         <failsafe.version>2.22.2</failsafe.version>
         <surefire.version>2.22.2</surefire.version>
-        <gitflow.version>1.0-m5.1</gitflow.version>
+        <gitflow.version>1.16.0</gitflow.version>
         <coveralls.version>4.3.0</coveralls.version>
         <jacoco.version>0.8.6</jacoco.version>
-        <jsch.version>0.0.7</jsch.version>
-        <jgit.version>4.5.7.201904151645-r</jgit.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -162,31 +160,9 @@
 
             <!-- for release management -->
             <plugin>
-                <groupId>external.atlassian.jgitflow</groupId>
-                <artifactId>jgitflow-maven-plugin</artifactId>
+                <groupId>com.amashchenko.maven.plugin</groupId>
+                <artifactId>gitflow-maven-plugin</artifactId>
                 <version>${gitflow.version}</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.eclipse.jgit</groupId>
-                        <artifactId>org.eclipse.jgit</artifactId>
-                        <version>${jgit.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.jcraft</groupId>
-                        <artifactId>jsch.agentproxy.jsch</artifactId>
-                        <version>${jsch.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.jcraft</groupId>
-                        <artifactId>jsch.agentproxy.usocket-jna</artifactId>
-                        <version>${jsch.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>com.jcraft</groupId>
-                        <artifactId>jsch.agentproxy.sshagent</artifactId>
-                        <version>${jsch.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
 
             <!-- for reporting to coveralls -->
