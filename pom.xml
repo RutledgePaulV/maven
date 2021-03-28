@@ -19,14 +19,14 @@
     <developers>
         <developer>
             <name>Paul Rutledge</name>
-            <email>paul.v.rutledge@gmail.com</email>
+            <email>rutledgepaulv@gmail.com</email>
         </developer>
     </developers>
 
     <licenses>
         <license>
             <name>MIT</name>
-            <url>http://opensource.org/licenses/MIT</url>
+            <url>https://opensource.org/licenses/MIT</url>
         </license>
     </licenses>
 
@@ -53,19 +53,22 @@
     </distributionManagement>
 
     <properties>
-        <gpg.version>1.5</gpg.version>
+        <gpg.version>1.6</gpg.version>
         <java.version>1.8</java.version>
-        <junit.version>4.12</junit.version>
-        <nexus.version>1.6.3</nexus.version>
-        <sources.version>3.0.0</sources.version>
-        <javadoc.version>2.10.3</javadoc.version>
-        <compiler.version>3.5.1</compiler.version>
-        <failsafe.version>2.19.1</failsafe.version>
-        <surefire.version>2.19.1</surefire.version>
+        <junit.version>4.13.2</junit.version>
+        <nexus.version>1.6.8</nexus.version>
+        <sources.version>3.2.1</sources.version>
+        <javadoc.version>3.2.0</javadoc.version>
+        <compiler.version>3.8.1</compiler.version>
+        <failsafe.version>2.22.2</failsafe.version>
+        <surefire.version>2.22.2</surefire.version>
         <gitflow.version>1.0-m5.1</gitflow.version>
-        <coveralls.version>4.1.0</coveralls.version>
-        <jacoco.version>0.7.6.201602180812</jacoco.version>
+        <coveralls.version>4.3.0</coveralls.version>
+        <jacoco.version>0.8.6</jacoco.version>
+        <jsch.version>0.0.9</jsch.version>
+        <jgit.version>5.11.0.202103091610-r</jgit.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
 
@@ -162,6 +165,28 @@
                 <groupId>external.atlassian.jgitflow</groupId>
                 <artifactId>jgitflow-maven-plugin</artifactId>
                 <version>${gitflow.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.eclipse.jgit</groupId>
+                        <artifactId>org.eclipse.jgit</artifactId>
+                        <version>${jgit.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.jcraft</groupId>
+                        <artifactId>jsch.agentproxy.jsch</artifactId>
+                        <version>${jsch.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.jcraft</groupId>
+                        <artifactId>jsch.agentproxy.usocket-jna</artifactId>
+                        <version>${jsch.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.jcraft</groupId>
+                        <artifactId>jsch.agentproxy.sshagent</artifactId>
+                        <version>${jsch.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
             <!-- for reporting to coveralls -->
