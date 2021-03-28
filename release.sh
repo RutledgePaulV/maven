@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 read -p "This will reset your current working tree to origin/develop, is this okay? " -n 1 -r
 echo

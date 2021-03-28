@@ -66,7 +66,7 @@
         <coveralls.version>4.3.0</coveralls.version>
         <jacoco.version>0.8.6</jacoco.version>
         <jsch.version>0.0.9</jsch.version>
-        <jgit.version>5.11.0.202103091610-r</jgit.version>
+        <jgit.version>4.11.9.201909030838-r</jgit.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
